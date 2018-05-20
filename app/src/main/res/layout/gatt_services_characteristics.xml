@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_line_while"
+        android:onClick="onConnectButtonClicked"
+        android:text="初始化"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/Button07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_line_while"
+        android:onClick="onOpenButtonClicked"
+        android:text="开始记录"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignBottom="@+id/Button03"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_line_while"
+        android:text="请先采集数据"
+        android:layout_alignBaseline="@+id/Button03"
+        android:layout_alignBottom="@+id/Button03"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/textView4"
+         />
+
+    <Button
+        android:id="@+id/Button06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_line_while"
+        android:onClick="onQuitButtonClicked"
+        android:text="退出" />
+    <Button
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="353dp"
+        android:background="@drawable/border_line_while"
+        android:text="开启反馈" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/pitchInfo"
+        android:layout_centerHorizontal="true">
+
+        <lecho.lib.hellocharts.view.LineChartView
+            android:id="@+id/linerChart"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"/>
+    </LinearLayout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="500dp"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/frameLayout1"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/Button03"
+        android:layout_toRightOf="@+id/Button03">
+
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/pitchInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:text="pitch"
+        />
+
+    <TextView
+        android:id="@+id/yawInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="yaw"
+        android:layout_alignBaseline="@+id/pitchInfo"
+        android:layout_alignBottom="@+id/pitchInfo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/rollInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="roll"
+        android:layout_alignBaseline="@+id/yawInfo"
+        android:layout_alignBottom="@+id/yawInfo"
+        android:layout_alignRight="@+id/Button07"
+        android:layout_alignEnd="@+id/Button07" />
+    <Button
+        android:id="@+id/last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:visibility="invisible"
+        android:text="上一周期" />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignRight="@+id/Button07"
+        android:visibility="invisible"
+        android:text="下一周期" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_alignRight="@+id/Button07"
+        android:text="正面图"
+        android:layout_above="@+id/frameLayout1"
+        android:layout_marginBottom="14dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:text="侧面图"
+        android:textColor="#000000"
+        android:layout_toLeftOf="@+id/Button07"
+        android:layout_alignLeft="@+id/frameLayout1"
+        android:layout_alignStart="@+id/frameLayout1" />
+
+    <ExpandableListView
+        android:id="@+id/gatt_services_list"
+        android:layout_width="match_parent"
+        android:layout_height="2000dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible" />
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"/>
+        <TextView android:id="@+id/device_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"/>
+        <TextView android:id="@+id/connection_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"/>
+        <TextView android:id="@+id/data_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>
